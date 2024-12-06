@@ -192,10 +192,9 @@ class AuthMobile extends Component {
     }
   };
   render() {
-    const siteKey = "6Lcrr5IqAAAAAPdbKBWuh6lWkmQhGUWfvKMhI7Eq";
+    const siteKey = process.env.SiteKey;
     return (
       <>
-  
         <div className="w-full h-[100vh] overflow-hidden  relative">
           <img
             src="https://images.unsplash.com/photo-1622126807280-9b5b32b28e77?q=80&w=2060&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -258,56 +257,60 @@ class AuthMobile extends Component {
                       placeholder="Enter your password"
                     />
                   </div>
-                  <div data-aos="fade-down" data-aos-delay="450" className="mb-6">
-                <div className="flex justify-between items-center">
-                  {this.state.captchaLoading ? (
-                    <p className="text-gray-500">Memuat CAPTCHA...</p>
-                  ) : (
-                    <>
-                      {this.state.captchaLoadError ? (
-                        <p className="text-red-500 text-sm">
-                          Gagal memuat CAPTCHA. Silakan refresh halaman.
-                        </p>
+                  <div
+                    data-aos="fade-down"
+                    data-aos-delay="450"
+                    className="mb-6"
+                  >
+                    <div className="flex justify-between items-center">
+                      {this.state.captchaLoading ? (
+                        <p className="text-gray-500">Memuat CAPTCHA...</p>
                       ) : (
                         <>
-                          {" "}
-                          <div className="flex flex-col justify-between items-center">
-                            <ReCAPTCHA
-                              ref={this.recaptchaRef} // Pasang referensi pada elemen ReCAPTCHA
-                              sitekey={siteKey}
-                              onChange={this.handleCaptcha}
-                              onErrored={this.handleCaptchaError}
-                              onLoaded={this.handleCaptchaLoaded} // Pastikan ini ada
-                            />
-                            {this.state.captchaError && (
-                              <div className="border-2 border-red-600 flex justify-center items-center p-1 w-full rounded-lg mt-2">
-                                <p className="text-red-500 text-sm font-semibold">
-                                  {this.state.captchaError}
-                                </p>
+                          {this.state.captchaLoadError ? (
+                            <p className="text-red-500 text-sm">
+                              Gagal memuat CAPTCHA. Silakan refresh halaman.
+                            </p>
+                          ) : (
+                            <>
+                              {" "}
+                              <div className="flex flex-col justify-between items-center">
+                                <ReCAPTCHA
+                                  ref={this.recaptchaRef} // Pasang referensi pada elemen ReCAPTCHA
+                                  sitekey={siteKey}
+                                  onChange={this.handleCaptcha}
+                                  onErrored={this.handleCaptchaError}
+                                  onLoaded={this.handleCaptchaLoaded} // Pastikan ini ada
+                                />
+                                {this.state.captchaError && (
+                                  <div className="border-2 border-red-600 flex justify-center items-center p-1 w-full rounded-lg mt-2">
+                                    <p className="text-red-500 text-sm font-semibold">
+                                      {this.state.captchaError}
+                                    </p>
+                                  </div>
+                                )}
                               </div>
-                            )}
-                          </div>
-                          <button
-                            type="button"
-                            onClick={this.handleRefreshCaptcha}
-                            className="bg-white text-base text-black py-1 px-2 rounded hover:bg-gray-400 mr-2"
-                          >
-                            <IoMdRefresh className="text-2xl" />
-                          </button>
+                              <button
+                                type="button"
+                                onClick={this.handleRefreshCaptcha}
+                                className="bg-white text-base text-black py-1 px-2 rounded hover:bg-gray-400 mr-2"
+                              >
+                                <IoMdRefresh className="text-2xl" />
+                              </button>
+                            </>
+                          )}
                         </>
                       )}
-                    </>
-                  )}
-                </div>
-                {this.state.timeoutError && (
-                  <div className="text-center text-red-500">
-                    <p>
-                      Terjadi kesalahan jaringan. Halaman akan disegarkan dalam
-                      beberapa detik...
-                    </p>
+                    </div>
+                    {this.state.timeoutError && (
+                      <div className="text-center text-red-500">
+                        <p>
+                          Terjadi kesalahan jaringan. Halaman akan disegarkan
+                          dalam beberapa detik...
+                        </p>
+                      </div>
+                    )}
                   </div>
-                )}
-              </div>
 
                   {/* Submit Button */}
 

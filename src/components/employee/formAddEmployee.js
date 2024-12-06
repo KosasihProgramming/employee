@@ -317,11 +317,11 @@ function FormAddEmployee(props) {
         </>
       ) : (
         <>
-          <div className="w-[90%] flex justify-start items-center p-6 gap-12  rounded-lg relative playing border-2 border-slate-600 overflow-hidden shadow-xl mt-10">
+          <div className="w-[90%] flex xl:flex-row flex-col justify-start items-center p-6 gap-12  rounded-lg relative playing border-2 border-slate-600 overflow-y-scroll xl:overflow-hidden shadow-xl mt-10">
             <div className="w-full flex justify-start items-center left-0 m-0 p-0  bg-white rounded-lg absolute opacity-5 h-full"></div>
             <div className="w-[25rem] h-[25rem] opacity-10 rounded-full blur-3xl bg-teal-400 absolute left-[5%] top-[5%]"></div>
 
-            <div className="flex flex-col justify-center items-center p-4 w-[40%] gap-8 text-white">
+            <div className="flex flex-col justify-center items-center p-4 w-full xl:w-[40%] gap-8 text-white">
               <div className="card-profile">
                 <div className="content-profile">
                   <div className="back">
@@ -355,9 +355,9 @@ function FormAddEmployee(props) {
               </div>
             </div>
             <div
-              data-aos="fade-down"
+              // data-aos="fade-down"
               data-aos-delay="350"
-              className="flex flex-col justify-start items-start p-6 w-[60%] gap-2 text-white overflow-y-scroll  h-[45rem]"
+              className="flex flex-col justify-start items-start p-6 w-full xl:w-[60%] gap-2 text-white overflow-y-scroll  h-[45rem]"
             >
               <div className="w-full gap-2 flex justify-between items-center p-2">
                 <div className="w-[50%] gap-2 flex flex-col justify-start items-start p-2">

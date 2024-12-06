@@ -4,12 +4,12 @@ import { getStorage } from "firebase/storage";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDHqcMSHj6D42YMZQATrUXxnD1j0-K7ndc",
-  authDomain: "scrum-management-6pk6ht.firebaseapp.com",
-  projectId: "scrum-management-6pk6ht",
-  storageBucket: "scrum-management-6pk6ht.appspot.com",
-  messagingSenderId: "1071824203920",
-  appId: "1:1071824203920:web:bc37824df956b1773e2815",
+  apiKey: process.env.ApiKey,
+  authDomain: process.env.AuthDomain,
+  projectId: process.env.ProjectId,
+  storageBucket: process.env.StorageBucket,
+  messagingSenderId: process.env.MessagingSenderId,
+  appId: process.env.AppId,
 };
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
