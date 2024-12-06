@@ -192,7 +192,7 @@ class Auth extends Component {
     }
   };
   render() {
-    const siteKey = process.env.SiteKey;
+    const siteKey = process.env.REACT_APP_SiteKey;
     return (
       <div className="w-full h-[100vh] overflow-hidden  relative">
         <img
