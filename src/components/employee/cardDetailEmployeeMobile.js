@@ -516,7 +516,7 @@ function CardDetailEmployeeMobile(props) {
       >
         <div className="w-full flex justify-center items-center left-0 m-0 p-0  bg-white rounded-lg absolute opacity-5 h-full"></div>
         <div className="w-[25rem] h-[25rem] opacity-10 rounded-full blur-3xl bg-white absolute left-[5%] top-[5%]"></div>
-        <div className="flex justify-end w-[53%] gap-8 pt-8 px-14 mr-14 pb-10 border-b-2 border-b-slate-500">
+        <div className="flex justify-center w-[100%] gap-8 pt-8 px-14  pb-10 border-b-2 border-b-slate-500">
           {isEdit ? (
             <>
               <button
@@ -781,7 +781,7 @@ function CardDetailEmployeeMobile(props) {
                           onChange={(date) => {
                             handleChangeDate("tanggalLahir", date);
                           }}
-                          className="bg-slate-700 text-white border border-slate-500 w-[18.4rem] p-3 hover:text-slate-800 active:text-slate-800"
+                          className="bg-slate-700 text-white border border-slate-500 w-[13rem] p-3 hover:text-slate-800 active:text-slate-800"
                         />
                       </Space>
                     </div>
