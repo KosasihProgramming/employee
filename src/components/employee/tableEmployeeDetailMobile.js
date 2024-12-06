@@ -313,7 +313,7 @@ function TableEmployeeDetailMobile(props) {
       </div>
       <div
         className={` ${
-          isAddData ? "h-[28rem] mb-6 p-6" : "h-[0rem] "
+          isAddData ? "h-[42rem] mb-6 p-6" : "h-[0rem] "
         } duration-500 flex w-full flex-col justify-start items-start border border-slate-400 rounded-lg `}
       >
         <div
@@ -321,7 +321,7 @@ function TableEmployeeDetailMobile(props) {
             isAddData ? "" : "hidden "
           }`}
         >
-          <div className="w-[33%] gap-2 flex flex-col justify-start items-start p-2 text-white gap-4 ">
+          <div className="w-[50%] gap-2 flex flex-col justify-start items-start p-2 text-white gap-4 ">
             <h4 className="font-semibold text-sm">Nama Dokumen</h4>
             <input
               type="text"
@@ -332,7 +332,7 @@ function TableEmployeeDetailMobile(props) {
               }}
             />
           </div>
-          <div className="w-[33%] gap-2 flex flex-col justify-start items-start p-2 text-white gap-4 ">
+          <div className="w-[50%] gap-2 flex flex-col justify-start items-start p-2 text-white gap-4 ">
             <h4 className="font-semibold text-sm"> Kategori Dokumen</h4>
 
             <div className="w-full flex p-2 bg-slate-700 font-normal border-slate-500 border rounded-lg justify-start items-center h-[3rem]">
@@ -346,7 +346,13 @@ function TableEmployeeDetailMobile(props) {
               />
             </div>
           </div>
-          <div className="w-[33%] gap-2 flex flex-col justify-start items-start p-2 text-white gap-4 ">
+        </div>
+        <div
+          className={`flex w-full justify-between items-center rounded-lg mb-4 ${
+            isAddData ? "" : "hidden "
+          }`}
+        >
+          <div className="w-[50%] gap-2 flex flex-col justify-start items-start p-2 text-white gap-4 ">
             <h4 className="font-semibold text-sm">Tanggal Terbit</h4>
 
             <Space direction="vertical" size={12}>
@@ -359,17 +365,11 @@ function TableEmployeeDetailMobile(props) {
                 onChange={(date) => {
                   handleChangeDate("terbitTanggal", date);
                 }}
-                className="bg-slate-700 text-white border xl:w-[21rem] w-[12rem] border-slate-500  p-3 hover:text-slate-800 active:text-slate-800"
+                className="bg-slate-700 text-white border xl:w-[21rem] w-[10rem] border-slate-500  p-3 hover:text-slate-800 active:text-slate-800"
               />
             </Space>
           </div>
-        </div>
-        <div
-          className={`flex w-full justify-between items-center rounded-lg mb-4 ${
-            isAddData ? "" : "hidden "
-          }`}
-        >
-          <div className="w-[33%] gap-2 flex flex-col justify-start items-start p-2 text-white gap-4 ">
+          <div className="w-[50%] gap-2 flex flex-col justify-start items-start p-2 text-white gap-4 ">
             <h4 className="font-semibold text-sm">Tanggal Berakhir</h4>
 
             <Space direction="vertical" size={12}>
@@ -382,11 +382,17 @@ function TableEmployeeDetailMobile(props) {
                 onChange={(date) => {
                   handleChangeDate("endTanggal", date);
                 }}
-                className="bg-slate-700 text-white border xl:w-[21rem] w-[12rem] border-slate-500  p-3 hover:text-slate-800 active:text-slate-800"
+                className="bg-slate-700 text-white border xl:w-[21rem] w-[10rem] border-slate-500  p-3 hover:text-slate-800 active:text-slate-800"
               />
             </Space>
           </div>
-          <div className="w-[33%] gap-2 flex flex-col justify-start items-start p-2 text-white gap-4 ">
+        </div>
+        <div
+          className={`flex w-full justify-between items-center rounded-lg mb-4 ${
+            isAddData ? "" : "hidden "
+          }`}
+        >
+          <div className="w-[50%] gap-2 flex flex-col justify-start items-start p-2 text-white gap-4 ">
             <h4 className="font-semibold text-sm">Status</h4>
             <div className="flex w-full justify-center items-center p-2 border border-slate-500 bg-slate-700 rounded-lg">
               <DropdownSearch
@@ -394,11 +400,11 @@ function TableEmployeeDetailMobile(props) {
                 change={(data) => {
                   setStatusDokumen(data.text);
                 }}
-                name={"Status Dokumen"}
+                name={"Status"}
               />
             </div>
           </div>
-          <div className="w-[33%] gap-2 flex flex-col justify-start items-start p-2 text-white gap-4 ">
+          <div className="w-[50%] gap-2 flex flex-col justify-start items-start p-2 text-white gap-4 ">
             <h4 className="font-semibold text-sm">
               {" "}
               File Dokumen ( Utamakan Format .pdf )
@@ -468,13 +474,13 @@ function TableEmployeeDetailMobile(props) {
         )}
       </div>
 
-      <div className="flex xl:hidden">
+      <div className="flex xl:hidden bg-slate-800">
         <table className="w-[100%] text-left text-sm font-normal">
           <thead>
             <tr className="bg-slate-700 text-slate-300 rounded-xl font-normal py-6 w-full">
               <th className="px-4 py-4 font-medium rounded-l-xl">Nama</th>
               <th className="px-4 py-4 font-medium ">Kategori</th>
-              <th className="px-4 py-4 font-medium ">Terbit</th>
+              {/* <th className="px-4 py-4 font-medium ">Terbit</th> */}
               <th className="px-4 py-4 font-medium ">Berakhir</th>
 
               <th className="px-4 py-4 font-medium rounded-r-xl">Aksi</th>
@@ -495,11 +501,11 @@ function TableEmployeeDetailMobile(props) {
                   </a>
                 </td>
 
-                <td className="border-b border-blue-gray-300 h-[4rem] max-h-[6rem] px-4 py-4 text-white">
+                {/* <td className="border-b border-blue-gray-300 h-[4rem] max-h-[6rem] px-4 py-4 text-white">
                   <a target="_blank" rel="noreferrer" href={data.url}>
                     {formatTanggal(data.tanggalTerbitDokumen)}
                   </a>
-                </td>
+                </td> */}
                 <td className="border-b border-blue-gray-300 h-[4rem] max-h-[6rem] px-4 py-4 text-white">
                   <a target="_blank" rel="noreferrer" href={data.url}>
                     {data.kategoriDokumen != "Perizinan"
