@@ -477,8 +477,6 @@ function TableEmployeeDetailMobile(props) {
               <th className="px-4 py-4 font-medium ">Terbit</th>
               <th className="px-4 py-4 font-medium ">Berakhir</th>
 
-              <th className="px-4 py-4 font-medium ">Status</th>
-
               <th className="px-4 py-4 font-medium rounded-r-xl">Aksi</th>
             </tr>
           </thead>
@@ -510,11 +508,6 @@ function TableEmployeeDetailMobile(props) {
                   </a>
                 </td>
 
-                <td className="border-b border-blue-gray-300 h-[4rem] max-h-[6rem] px-4 py-4 text-white">
-                  <a target="_blank" rel="noreferrer" href={data.url}>
-                    {data.statusDokumen}
-                  </a>
-                </td>
                 <td className="border-b border-blue-gray-300 h-[4rem] max-h-[6rem] max-w-[21rem] px-4 py-4 text-white">
                   <div className="flex w-full justify-between items-center">
                     <div className="h-[2rem] w-[2rem] hover:border-2 hover:border-teal-500 flex justify-center items-center rounded-full bg-transparent p-1 relative ">
